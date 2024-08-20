@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #cecece;
+    background: url(./assets/bg2.jpg);
+}
