@@ -3,6 +3,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --clr-i: #8d86b5;
+    --clr-ii: #90a0f2;
+}
+
 .App {
     min-height: 100vh;
     display: flex;
@@ -12,4 +17,21 @@
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #cecece;
     background: url(./assets/bg2.jpg);
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        width: 100%;    
+
+        .page {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            width: 70%;
+        }
+    }
 }
