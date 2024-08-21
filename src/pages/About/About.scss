@@ -1,0 +1,69 @@
+.about {
+    display: flex;
+    //flex-direction: column;
+    //justify-content: center;
+    //
+    width: 100%;
+    flex:1;
+    align-items: center;
+    gap: 30px;
+    
+    .name {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: raleway, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        .txt {
+            font-size: 135px;
+            line-height: 140px;
+            text-align: center;
+
+            &.lg {
+                font-size: 250px;
+                line-height: 198px;
+                filter: drop-shadow(0 6px 0 #766fa0);
+                background: linear-gradient(var(--clr-i), var(--clr-ii));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+        }
+
+        .me {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            background: linear-gradient(var(--clr-i), var(--clr-ii));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+
+        .info-card {
+            display: flex;
+            flex-direction: column;
+
+            .title {
+                font-size: 20px;
+                color: var(--clr-i);
+            }
+
+            .details {
+                font-size: 16px;
+                font-weight: normal;
+            }
+        }
+    }
+}
