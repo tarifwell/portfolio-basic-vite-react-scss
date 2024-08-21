@@ -33,5 +33,28 @@
             min-height: 100vh;
             width: 70%;
         }
+        
+        // to review....
+        .socials-wrapper {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+            .quick-links {
+                font-weight: 700; //500
+                font-size: 18px;
+            }
+
+            .socials {
+                display: flex;
+                //gap: 10px;
+            }
+        }
+
+
     }
 }

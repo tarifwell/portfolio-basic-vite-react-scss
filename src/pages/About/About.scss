@@ -51,19 +51,6 @@
         padding: 20px;
         gap: 20px;
 
-        .info-card {
-            display: flex;
-            flex-direction: column;
-
-            .title {
-                font-size: 20px;
-                color: var(--clr-i);
-            }
-
-            .details {
-                font-size: 16px;
-                font-weight: normal;
-            }
-        }
+        //.info-card {} here
     }
 }

@@ -1,5 +1,5 @@
 import "./Header.scss";
-import logo from "../../assets/logo_folio8.png";
+import logo from "../../assets/logo_folio_7.png";
 import profile from "../../assets/profile-1.jpg";
 import { useState, useEffect, useRef } from "react";
 
