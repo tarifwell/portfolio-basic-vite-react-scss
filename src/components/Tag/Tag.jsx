@@ -1,8 +1,8 @@
 import './Tag.scss';
 
-const Tag = ({ title, key }) => {
+const Tag = ({ title, akey }) => {
   return (
-    <div className="tag" key={key}>
+    <div className="tag" key={akey}>
         <h2 className="title">{title}</h2>
     </div>
   )

@@ -14,7 +14,7 @@ const ProjectTemplate = ({ projectName, projectDesc, tags, img }) => {
             <div className="tags-wrapper">
               { tags.map( (tag, index) => {
                 return (
-                    <Tag title={tag} key={index} />
+                    <Tag title={tag} akey={index} key={index} />
                 );
               })}
             </div>

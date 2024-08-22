@@ -1,4 +1,5 @@
 import './App.scss'
+import { useEffect, useRef, useState } from 'react'
 import Header from './components/Header/Header'
 import Social from './components/Social/Social'
 import About from './pages/About/About'
@@ -13,19 +14,59 @@ import facebook from './assets/social_facebook_1.png'
 import discord from './assets/social_discord_1.png'
 import twitter from './assets/social_twitter_1.png'
 
-
 function App() {
+
+  const [activePageIndex, setActivePageIndex] = useState(0);
+  const [isProfileVisible, setIsProfileVisible] = useState(false);
+  const pagesRef = useRef([]);
+
+  useEffect(() => {
+
+    const handleScroll = () => {
+
+      const homePage = pagesRef.current[0];
+      if (!homePage) return; // be sure that page exists
+
+      let homeBottom = homePage.getBoundingClientRect().bottom;
+      let homeHeight = homePage.offsetHeight;
+
+      // to hide or show the profile element (of the navbar in the Header)
+      if (homeBottom < (homeHeight / 2)) {
+        setIsProfileVisible(true);       
+      }else {
+        setIsProfileVisible(false);
+      }
+
+      // Manage active page update and navigation indicator (in the Header)
+      pagesRef.current.forEach((page, index) => {
+        if (!page) return; // be sure that currentPage exists
+
+        const pageTop = page.getBoundingClientRect().top;
+        if (pageTop < 300) {
+          setActivePageIndex(index);
+        }
+      });      
+    }
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="App">
-      <Header />
+      <Header 
+        activePageIndex={activePageIndex} 
+        setActivePageIndex={setActivePageIndex}
+        isProfileVisible={isProfileVisible}
+      />
 
       <main>
-        <div className="page" id="home">
+        <div className="page" id="home" ref={el => (pagesRef.current[0] = el)}>
           <Home />
         </div>
 
-        <div className="page" id="about">
+        <div className="page" id="about" ref={el => (pagesRef.current[1] = el)}>
           <About />
         </div>
 
@@ -41,16 +82,15 @@ function App() {
           </div>
         </div>
 
-        <div className="page" id="projects">
+        <div className="page" id="projects" ref={el => (pagesRef.current[2] = el)}>
           <Projects />
         </div>
 
-        <div className="page" id="contact">
+        <div className="page" id="contact" ref={el => (pagesRef.current[3] = el)}>
           <Contact />
         </div>
 
       </main>
-
     </div>
   )
 }

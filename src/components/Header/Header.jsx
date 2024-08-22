@@ -1,27 +1,25 @@
 import "./Header.scss";
 import logo from "../../assets/logo_folio_7.png";
-import profile from "../../assets/profile-1.jpg";
-import { useState, useEffect, useRef } from "react";
+import profileImage from "../../assets/profile-1.jpg";
+import { useRef, useEffect } from "react";
 
-const Header = () => {
+const Header = ({ activePageIndex, setActivePageIndex, isProfileVisible }) => {
 
-  const [activeIndex, setActiveIndex] = useState(0);
   const indicatorRef = useRef(null);
   const navLinksRef = useRef([]);
 
   useEffect(() => {
     
-    const link = navLinksRef.current[activeIndex];
+    const link = navLinksRef.current[activePageIndex];
 
     if (link) {
       const { offsetWidth: width, offsetLeft: left} = link;
 
-      indicatorRef.current.style.left = `${left}px`;
-      //indicatorRef.current.style.width = `${width + 28}px`;
+      indicatorRef.current.style.left = `${left}px`;      
       indicatorRef.current.style.width = `${width + 28}px`;
     }
 
-  }, [activeIndex]);  
+  }, [activePageIndex]);  
 
   return (
     <header>
@@ -35,21 +33,21 @@ const Header = () => {
       <nav>
         <ul>
           <div className="indicator" ref={indicatorRef}></div>
-          {["HOME", "ABOUT", "ALL PROJECTS", "CONTACT"].map((text, index) => (
+          {["HOME", "ABOUT", "PROJECTS", "CONTACT"].map((text, index) => (
             <li
               key={index}
-              className={index === activeIndex ? "active" : ""}
-              onClick={() => setActiveIndex(index)}
+              className={index === activePageIndex ? "active" : ""}
+              onClick={() => setActivePageIndex(index)}
               ref={(el) => (navLinksRef.current[index] = el)}
             >
-              <a href={`#${text.toLowerCase().replace(" ", "")}`} aria-current={index === activeIndex ? "page" : undefined}>{text}</a>
+              <a href={`#${text.toLowerCase().replace(" ", "")}`} aria-current={index === activePageIndex ? "page" : undefined}>{text}</a>
             </li>
           ))}
         </ul>
       </nav>
 
-      <div className="profile">
-        <img src={profile} alt="Profile" />
+      <div className={`profile ${isProfileVisible ? 'active' : ''}`}>
+        <img src={profileImage} alt="Profile" />
       </div>
     </header>
   );

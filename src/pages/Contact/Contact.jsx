@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <div className='contact'>
       <h1>Get in touch</h1>
-      <sapn>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae dolorum molestias eaque architecto adipisci necessitatibus, quas et blanditiis aperiam modi!</sapn>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae dolorum molestias eaque architecto adipisci necessitatibus, quas et blanditiis aperiam modi!</p>
 
       <div className="socials">
         
