@@ -4,6 +4,7 @@ import Social from './components/Social/Social'
 import About from './pages/About/About'
 import Home from './pages/Home/Home'
 import Projects from './pages/Projects/Projects'
+import Contact from './pages/Contact/Contact'
 
 import github from './assets/social_github_1.png'
 import linkedin from './assets/social_linkedin_1.png'
@@ -42,6 +43,10 @@ function App() {
 
         <div className="page" id="projects">
           <Projects />
+        </div>
+
+        <div className="page" id="contact">
+          <Contact />
         </div>
 
       </main>

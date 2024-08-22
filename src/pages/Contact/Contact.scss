@@ -1,0 +1,44 @@
+.contact {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding-top: 50px;
+    text-align: center;
+
+    h1 {
+        font-size: 40px;
+    }
+
+    span {
+        max-width: 60%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .socials {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 100px 0;        
+        justify-content: center;
+
+        //gap: 10px;
+
+        .social {
+            background: #1a1a1a;            
+
+            h1 {
+                font-size: 20px;
+            }
+        }
+    }
+
+    footer {
+        margin-top: 50px;
+        text-align: center;
+        //font-size: 14px;
+        //color: #999;
+    }
+}
